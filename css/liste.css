@@ -1,0 +1,63 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    color: white;
+}
+
+header{
+    background-image: url("../img/unnamed.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+h2{
+    padding: 20px;
+    color: green;
+}
+
+.logo{
+    height: 80px;
+    background-color: black;
+
+}
+
+#liste-item{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.item-box{
+    margin-bottom: 100px;
+    flex-basis: 30%;
+    border: solid black 3px;
+}
+
+.item-text{
+    padding: 20px;
+}
+
+footer{
+    margin-top: 200px;
+    height: 100px;
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px;
+    color: white;
+}
