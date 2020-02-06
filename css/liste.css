@@ -30,10 +30,14 @@ h2{
     color: green;
 }
 
-.logo{
+.item-img{
     height: 80px;
-    background-color: black;
+    background-color: darkslategrey;
 
+}
+
+.item-img:hover{
+    background-color: green;
 }
 
 #liste-item{

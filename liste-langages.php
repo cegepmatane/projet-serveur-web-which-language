@@ -1,7 +1,7 @@
 <?php
     include("connexion.php");
 
-    $REQUETE_LISTE_LANGAGES = "SELECT nom, auteur, date, description, utilisation from langage;";
+    $REQUETE_LISTE_LANGAGES = "SELECT id, nom, auteur, date, description, utilisation from langage;";
 
     $set_utf=$connexion->prepare("SET NAMES UTF8"); 
     $set_utf->execute(); 
@@ -38,14 +38,13 @@
                 ?>
 
                 <div class="item-box">
-                    <div class="item-img logo">
-                    </div>
+                    <a href="detail-langage.php?id=<?= $langage["id"] ?>">
+                        <div class="item-img"></div>
+                    </a>
                     <div class="item-text">
                         <h3 class="item-name"><?= $langage["nom"] ?></h3>
-                        <p class="item-author"><?= $langage["auteur"] ?></p>
                         <p class="item-date"><?= $langage["date"] ?></p>
                         <p class="item-desc"><?= $langage["description"] ?></p>
-                        <p class="item-util"><?= $langage["utilisation"] ?></p>
                     </div>
                 </div>
                 <?php
