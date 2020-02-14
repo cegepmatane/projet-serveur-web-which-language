@@ -14,10 +14,10 @@ h1{
 }
 
 header{
-    background-image: url("../img/unnamed.jpg");
+    background-image: url("../img/banniere.jpg");
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 400px;
     margin-bottom: 100px;
     display: flex;
     justify-content: center;
@@ -28,12 +28,6 @@ header{
 h2{
     padding: 20px;
     color: green;
-}
-
-.item-img{
-    height: 80px;
-    background-color: darkslategrey;
-
 }
 
 .item-img:hover{
@@ -50,6 +44,13 @@ h2{
     margin-bottom: 100px;
     flex-basis: 30%;
     border: solid black 3px;
+
+    cursor: pointer;
+}
+
+.item-img{
+    height: 80px;
+    background-color: darkslategrey;
 }
 
 .item-text{

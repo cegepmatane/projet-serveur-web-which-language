@@ -15,13 +15,19 @@
 
 ?>
 
-
-
 <html lang="fr" xml:lang="fr">
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <title>Liste des langages de programmation</title>
         <link rel="stylesheet" type="text/css" href="css/liste.css">
+        <script>
+        function clicItem(idItem)
+        {
+            var url = "detail-langage.php?id="+ idItem;
+            console.log(url);
+            window.location = url;
+        }
+        </script>
     </head>
     <body>
         <div id="contenu-page">
@@ -37,10 +43,10 @@
                     {
                 ?>
 
-                <div class="item-box">
-                    <a href="detail-langage.php?id=<?= $langage["id"] ?>">
+                <div class="item-box" onclick="clicItem(<?= $langage['id'] ?>)">
+                    <!-- <a href="detail-langage.php?id="> -->
                         <div class="item-img"></div>
-                    </a>
+                    <!-- </a> -->
                     <div class="item-text">
                         <h3 class="item-name"><?= $langage["nom"] ?></h3>
                         <p class="item-date"><?= $langage["date"] ?></p>

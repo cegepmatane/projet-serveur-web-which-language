@@ -14,8 +14,6 @@
     $langage = $requete->fetch();
 ?>
 
-
-
 <html lang="fr" xml:lang="fr">
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -29,8 +27,6 @@
             </header>
             <div id="liste-item">
                 <div class="item-box">
-                    <div class="item-img">
-                    </div>
                     <div class="item-text">
                         <h3 class="item-name"><?= $langage["nom"] ?></h3>
                         <h4>Auteur(s)</h4>
