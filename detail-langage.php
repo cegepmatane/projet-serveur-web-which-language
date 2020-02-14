@@ -25,8 +25,11 @@
             <header>
                 <h1>Détail du langage <?= $langage["nom"] ?></h1>
             </header>
+            <div id="bouton-retour">
+                <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
+            </div>
             <div id="liste-item">
-                <div class="item-box">
+                <div class="item-box-detail">
                     <div class="item-text">
                         <h3 class="item-name"><?= $langage["nom"] ?></h3>
                         <h4>Auteur(s)</h4>
