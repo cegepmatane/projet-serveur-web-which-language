@@ -32,12 +32,13 @@
     <body>
         <div id="contenu-page">
             <header>
-                <h1>Liste des langages</h1>
+                <h1>Liste des langages de programmation</h1>
             </header>
-            <h2>Liste des langages de programmation</h2>
+            <div id="bouton-administration">
+                <a class="btn" href="administration/liste-langages.php"><h2>Section ADMIN</h2></a>
+            </div>
+            <h2>Liste des langages</h2>
             <div id="liste-item">
-                
-
                 <?php
                     foreach($listeLangages as $langage)
                     {

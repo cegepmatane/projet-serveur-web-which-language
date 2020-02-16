@@ -31,12 +31,49 @@ h2{
 }
 
 #bouton-retour{
-    width: 35%;
+    width: 30%;
     background-color: green;
 }
 
 #bouton-retour:hover{
     background-color: darkslategrey;
+}
+
+#bouton-administration{
+    margin: 0 auto;
+    text-align: center;
+    width: 30%;
+    background-color: darkred;
+}
+
+#bouton-administration:hover{
+    background-color: red;
+}
+
+.bouton-action{
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bouton-action:hover{
+    background-color: darkslategrey;
+}
+
+.bouton-ajouter
+{
+    width: 35%;
+    border: dashed black 5px;
+}
+
+.bouton-modifier
+{
+    background-color: darkorange;
+}
+
+.bouton-supprimer
+{
+    background-color: darkred;
 }
 
 .btn{
@@ -45,10 +82,7 @@ h2{
 
 .btn h2{
     color: white;
-
 }
-
-
 
 .item-img:hover{
     background-color: green;
@@ -71,6 +105,10 @@ h2{
 .item-box-detail{
     width: 95%;
     border: solid black 3px;
+
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
 }
 
 .item-img{
@@ -80,6 +118,16 @@ h2{
 
 .item-text{
     padding: 20px;
+}
+
+.detail{
+    padding: 20px;
+    flex-basis: 40%;
+}
+
+.fluide{
+    height: auto;
+    width: 100%;
 }
 
 footer{

@@ -18,15 +18,18 @@
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <title>Le langage <?= $langage["nom"] ?></title>
-        <link rel="stylesheet" type="text/css" href="css/liste.css">
+        <link rel="stylesheet" type="text/css" href="../css/liste.css">
     </head>
     <body>
         <div id="contenu-page">
             <header>
                 <h1>Détail du langage <?= $langage["nom"] ?></h1>
             </header>
+            <div id="bouton-retour">
+                <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
+            </div>
             <div id="liste-item">
-                <div class="item-box">
+                <div class="item-box-detail">
                     <div class="item-text">
                         <h3 class="item-name"><?= $langage["nom"] ?></h3>
                         <h4>Auteur(s)</h4>
