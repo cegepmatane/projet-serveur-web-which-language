@@ -29,6 +29,8 @@ $MESSAGE_AJOUT_LANGAGE = "INSERT INTO langage (nom, auteur, date, description, u
                             . "'" . $utilisation . "', "
                             . "'" . $illustration . "');";
 
+echo $MESSAGE_AJOUT_LANGAGE;
+
 $requete = $connexion->prepare($MESSAGE_AJOUT_LANGAGE);
 $requete->execute();
 

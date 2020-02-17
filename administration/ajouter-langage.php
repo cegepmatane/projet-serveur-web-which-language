@@ -40,7 +40,7 @@
                         <label for="illustration">Illustration</label>
                         <input type="file" id="illustration" name="illustration" required>
                     </div>
-                    <input type="submit" value="Enregsitrer">
+                    <input type="submit" value="Enregistrer">
                 </form>
             </section>
             <footer>
