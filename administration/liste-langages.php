@@ -54,7 +54,7 @@
                         <p class="item-desc"><?= $langage["description"] ?></p>
                     </div>
                     <div class="bouton-action bouton-modifier">
-                        <a class="btn" href="modifier-langage.php"><h2>Modifier</h2></a>
+                        <a class="btn" href="modifier-langage.php?id=<?= $langage["id"] ?>"><h2>Modifier</h2></a>
                     </div>
                     <div class="bouton-action bouton-supprimer">
                         <a class="btn" href="supprimer-langage.php"><h2>Supprimer</h2></a>
