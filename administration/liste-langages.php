@@ -57,7 +57,7 @@
                         <a class="btn" href="modifier-langage.php?id=<?= $langage["id"] ?>"><h2>Modifier</h2></a>
                     </div>
                     <div class="bouton-action bouton-supprimer">
-                        <a class="btn" href="supprimer-langage.php"><h2>Supprimer</h2></a>
+                        <a class="btn" href="supprimer-langage.php?id=<?= $langage["id"] ?>"><h2>Supprimer</h2></a>
                     </div>
                 </div>
                 <?php
@@ -65,7 +65,7 @@
                 ?>
             </div>
             <div class="bouton-action bouton-ajouter">
-                <a class="btn" href="ajouter-langage.php"><h2 style="color: black;">+ Ajouter un langage</h2></a>
+                <a class="btn" href="ajouter-langage.php"><h2>+ Ajouter un langage</h2></a>
             </div>
             <footer>
                 &copy;Hy-Vong 2019

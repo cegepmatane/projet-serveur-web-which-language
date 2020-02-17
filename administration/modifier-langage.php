@@ -26,7 +26,7 @@ $langage = $requete->fetch();
                 <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
             </div>
             <section id="contenu">
-                <form class="film" action="traitement-modifier-langage.php" method="POST" enctype="multipart/form-data">
+                <form class="formulaire-modification" action="traitement-modifier-langage.php" method="POST" enctype="multipart/form-data">
                     <div class="champ">
                         <label for="id"></label>
                         <input type="text" id="id" name="id" value="<?= $id ?>" hidden>

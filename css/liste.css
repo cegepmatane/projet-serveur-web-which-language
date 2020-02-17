@@ -30,6 +30,15 @@ h2{
     color: green;
 }
 
+
+.btn{
+    text-decoration: none;
+}
+
+.btn h2{
+    color: white;
+}
+
 #bouton-retour{
     width: 30%;
     background-color: green;
@@ -65,6 +74,14 @@ h2{
     border: dashed black 5px;
 }
 
+.bouton-ajouter h2{
+    color: black;
+}
+
+.bouton-ajouter h2:hover{
+    color:white;
+}
+    
 .bouton-modifier
 {
     background-color: darkorange;
@@ -75,16 +92,26 @@ h2{
     background-color: darkred;
 }
 
-.btn{
-    text-decoration: none;
-}
-
-.btn h2{
-    color: white;
-}
 
 .item-img:hover{
     background-color: green;
+}
+
+section{
+    text-align: center;
+    justify-content: center;
+}
+
+/*FORMULAIRES*/
+form{
+    margin: 0 auto;
+    width: 40%;
+    border: solid black 3px;
+    padding: 20px;
+}
+
+input, label{
+    margin: 2% auto;
 }
 
 #liste-item{
