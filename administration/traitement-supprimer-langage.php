@@ -1,14 +1,15 @@
 <?php
 
-include("connexion.php");
+require "../configuration.php";
+require CHEMIN_ACCESSEUR . 'LangageDAO.php';
 
-$id = $_POST["id"];
-$nom = $_POST["nom"];
+$filtresSupprLangage = array();
+$filtresSupprLangage['id'] = FILTER_SANITIZE_NUMBER_INT;
+$filtresSupprLangage['nom'] = FILTER_SANITIZE_ENCODED;
 
-$MESSAGE_SUPPRESSION_LANGAGE = "DELETE FROM langage WHERE id=".$id.";";
-                            
-$requete = $connexion->prepare($MESSAGE_SUPPRESSION_LANGAGE);
-$requete->execute();
+$langage = filter_input_array(INPUT_POST, $filtresSupprLangage);
+
+$reussiteSuppression = LangageDAO::supprimerLangage($langage);
 
 ?>
 
@@ -22,14 +23,13 @@ $requete->execute();
     <body>
         <div id="contenu-page">
             <header>
-                <h1>Suppression du langage <?=$nom?></h1>
+                <h1>Suppression du langage <?=$langage['nom']?></h1>
             </header>
             <div id="bouton-retour">
                 <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
             </div>
             <?php
 
-            $reussiteSuppression = $requete;
             if($reussiteSuppression)
             {
             ?>

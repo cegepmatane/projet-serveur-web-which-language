@@ -1,38 +1,27 @@
 <?php
 
-//print_r($_FILES);
-
-
 $repertoireIllustration = $_SERVER['DOCUMENT_ROOT'] . "/projet-serveur-web-2020-Emustle/img/";
 $illustration = $_FILES['illustration']['name'];
-
 
 $fichierDestination = $repertoireIllustration . $illustration;
 $fichierSource = $_FILES['illustration']['tmp_name'];
 
 move_uploaded_file($fichierSource, $fichierDestination);
 
+require "../configuration.php";
+require CHEMIN_ACCESSEUR . "LangageDAO.php";
 
-include("connexion.php");
+$filtresAjoutLangage = array();
+$filtresAjoutLangage["nom"] = FILTER_SANITIZE_ENCODED;
+$filtresAjoutLangage["auteur"] = FILTER_SANITIZE_ENCODED;
+$filtresAjoutLangage["date"] = FILTER_SANITIZE_NUMBER_INT;
+$filtresAjoutLangage["description"] = FILTER_SANITIZE_ENCODED;
+$filtresAjoutLangage["utilisation"] = FILTER_SANITIZE_ENCODED;
 
-$nom = $_POST["nom"];
-$auteur = $_POST["auteur"];
-$date = $_POST["date"];
-$description = $_POST["description"];
-$utilisation = $_POST["utilisation"];
+$langage = filter_input_array(INPUT_POST, $filtresAjoutLangage);
+$langage["illustration"] = $illustration;
 
-$MESSAGE_AJOUT_LANGAGE = "INSERT INTO langage (nom, auteur, date, description, utilisation, illustration)
-                            VALUES ('" . $nom . "', "
-                            . "'" . $auteur . "', "
-                            . "'" . $date . "', "
-                            . "'" . $description . "', "
-                            . "'" . $utilisation . "', "
-                            . "'" . $illustration . "');";
-
-echo $MESSAGE_AJOUT_LANGAGE;
-
-$requete = $connexion->prepare($MESSAGE_AJOUT_LANGAGE);
-$requete->execute();
+$reussiteAjout = LangageDAO::ajouterLangage($langage);
 
 ?>
 
@@ -46,14 +35,13 @@ $requete->execute();
     <body>
         <div id="contenu-page">
             <header>
-                <h1>Ajout d'un langage <?=$nom?></h1>
+                <h1>Ajout d'un langage <?=$langage['nom']?></h1>
             </header>
             <div id="bouton-retour">
                 <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
             </div>
             <?php
 
-            $reussiteAjout = $requete;
             if($reussiteAjout)
             {
             ?>

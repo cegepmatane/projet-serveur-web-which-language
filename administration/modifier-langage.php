@@ -1,13 +1,9 @@
 <?php
-include ("connexion.php");
+    require "../configuration.php";
+    require CHEMIN_ACCESSEUR . "LangageDAO.php";
 
-$id = $_GET["id"];
-
-$MESSAGE_SQL_LANGAGE = "SELECT nom, auteur, date, description, utilisation, illustration FROM langage WHERE id=".$id.";";
-
-$requete = $connexion->prepare($MESSAGE_SQL_LANGAGE);
-$requete->execute();
-$langage = $requete->fetch();
+    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+    $langage = LangageDAO::lireLangage($id);
 ?>
 
 <!DOCTYPE html>

@@ -1,18 +1,7 @@
 <?php
-    include("connexion.php");
-
-    $REQUETE_LISTE_LANGAGES = "SELECT id, nom, auteur, date, description, utilisation from langage;";
-
-    $set_utf=$connexion->prepare("SET NAMES UTF8"); 
-    $set_utf->execute(); 
-
-    $requete = $connexion->prepare($REQUETE_LISTE_LANGAGES);
-    $requete->execute();
-    $listeLangages = $requete->fetchAll();
-
-    //Affichage brut des données
-    //print_r($listeLangages);
-
+    include ("../configuration.php");
+    require CHEMIN_ACCESSEUR . "LangageDAO.php";
+    $listeLangages = LangageDAO::listerLangages();
 ?>
 
 <html lang="fr" xml:lang="fr">

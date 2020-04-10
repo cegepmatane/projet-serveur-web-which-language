@@ -1,17 +1,8 @@
 <?php
-
-    include("connexion.php");
-
-    $id = $_GET["id"];
-
-    $set_utf=$connexion->prepare("SET NAMES UTF8"); 
-    $set_utf->execute(); 
-
-    $REQUETE_DETAIL_LANGAGE = "SELECT id, nom, auteur, date, description, utilisation, illustration FROM langage WHERE id=" . $id;
-
-    $requete = $connexion->prepare($REQUETE_DETAIL_LANGAGE);
-    $requete->execute();
-    $langage = $requete->fetch();
+    require_once ("configuration.php");
+    require CHEMIN_ACCESSEUR . "LangageDAO.php";
+    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+    $langage = LangageDAO::lireLangage($id);
 ?>
 
 <html lang="fr" xml:lang="fr">

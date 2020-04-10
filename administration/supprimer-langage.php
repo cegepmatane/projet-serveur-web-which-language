@@ -1,14 +1,9 @@
 <?php
+    require "../configuration.php";
+    require CHEMIN_ACCESSEUR . "LangageDAO.php";
 
-include("connexion.php");
-
-$id = $_GET["id"];
-
-$MESSAGE_SQL_LANGAGE = "SELECT nom FROM langage WHERE id=".$id.";";
-
-$requete = $connexion->prepare($MESSAGE_SQL_LANGAGE);
-$requete->execute();
-$langage = $requete->fetch();
+    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+    $langage = LangageDAO::lireLangage($id);
 ?>
 
 <!DOCTYPE html>
@@ -32,11 +27,11 @@ $langage = $requete->fetch();
                 <form class="formulaire-suppression" action="traitement-supprimer-langage.php" method="POST" enctype="multipart/form-data">
                     <div class="champ">
                         <label for="id"></label>
-                        <input type="text" id="id" name="id" value="<?= $id ?>" hidden>
+                        <input type="text" id="id" name="id" value="<?= $langage['id'] ?>" hidden>
                     </div>
                     <div class="champ">
                         <label for="nom"></label>
-                        <input type="text" id="nom" name="nom" value="<?= $langage["nom"] ?>" hidden>
+                        <input type="text" id="nom" name="nom" value="<?= $langage['nom'] ?>" hidden>
                     </div>
                     <input type="submit" value="Supprimer">
                 </form>

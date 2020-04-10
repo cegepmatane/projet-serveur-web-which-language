@@ -1,17 +1,9 @@
 <?php
+    require "../configuration.php";
+    require CHEMIN_ACCESSEUR . "LangageDAO.php";
 
-    include("connexion.php");
-
-    $id = $_GET["id"];
-
-    $set_utf=$connexion->prepare("SET NAMES UTF8"); 
-    $set_utf->execute(); 
-
-    $REQUETE_DETAIL_LANGAGE = "SELECT id, nom, auteur, date, description, utilisation, illustration FROM langage WHERE id=" . $id;
-
-    $requete = $connexion->prepare($REQUETE_DETAIL_LANGAGE);
-    $requete->execute();
-    $langage = $requete->fetch();
+    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+    $langage = LangageDAO::lireLangage($id);
 ?>
 
 <html lang="fr" xml:lang="fr">
@@ -30,13 +22,13 @@
             </div>
             <div class="item-box-detail">
                 <div class="detail item-text">
-                    <h3 class="item-name"><?= $langage["nom"] ?></h3>
+                    <h3 class="item-name"><?= $langage['nom'] ?></h3>
                     <h4>Auteur(s)</h4>
                     <p class="item-author"><?= $langage["auteur"] ?></p>
                     <h4>Première version</h4>
                     <p class="item-date"><?= $langage["date"] ?></p>
                     <h4>Description</h4>
-                    <p class="item-desc"><?= $langage["description"] ?></p>
+                    <p class="item-desc"><?= $langage['description'] ?></p>
                     <h4>Utilisation</h4>
                     <p class="item-util"><?= $langage["utilisation"] ?></p>
                 </div>

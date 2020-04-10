@@ -8,19 +8,21 @@ $fichierSource = $_FILES['illustration']['tmp_name'];
 
 move_uploaded_file($fichierSource, $fichierDestination);
 
-include("connexion.php");
+require "../configuration.php";
+require CHEMIN_ACCESSEUR . 'LangageDAO.php';
 
-$id = $_POST["id"];
-$nom = $_POST["nom"];
-$auteur = $_POST["auteur"];
-$date =$_POST["date"];
-$description = $_POST["description"];
-$utilisation = $_POST["utilisation"];
+$filtresModifLangage = array();
+$filtresModifLangage['id'] = FILTER_SANITIZE_NUMBER_INT;
+$filtresModifLangage['nom'] = FILTER_SANITIZE_ENCODED;
+$filtresModifLangage['auteur'] = FILTER_SANITIZE_ENCODED;
+$filtresModifLangage['date'] = FILTER_SANITIZE_NUMBER_INT;
+$filtresModifLangage['description'] = FILTER_SANITIZE_ENCODED;
+$filtresModifLangage['utilisation'] = FILTER_SANITIZE_ENCODED;
 
-$MESSAGE_MODIF_LANGAGE = "UPDATE langage SET nom='".$nom."', auteur='".$auteur."', date='".$date."', description='".$description."', utilisation='".$utilisation."', illustration='".$illustration."' WHERE id=".$id.";";
-                            
-$requete = $connexion->prepare($MESSAGE_MODIF_LANGAGE);
-$requete->execute();
+$langage = filter_input_array(INPUT_POST, $filtresModifLangage);
+$langage['illustration'] = $illustration;
+
+$reussiteModif = LangageDAO::modifierLangage($langage);
 
 ?>
 
@@ -34,14 +36,13 @@ $requete->execute();
     <body>
         <div id="contenu-page">
             <header>
-                <h1>Modification du langage <?=$nom?></h1>
+                <h1>Modification du langage <?=$langage['nom']?></h1>
             </header>
             <div id="bouton-retour">
                 <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
             </div>
             <?php
 
-            $reussiteModif = $requete;
             if($reussiteModif)
             {
             ?>
