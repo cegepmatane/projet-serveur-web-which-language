@@ -11,19 +11,24 @@ move_uploaded_file($fichierSource, $fichierDestination);
 
 require CHEMIN_ACCESSEUR . "MembreDAO.php";
 
-$filtresNouveauMembre = array();
-$filtresNouveauMembre["pseudonyme"] = FILTER_SANITIZE_ENCODED;
-$filtresNouveauMembre["mot_de_passe"] = FILTER_SANITIZE_ENCODED;
-$filtresNouveauMembre["courriel"] = FILTER_SANITIZE_EMAIL;
-$filtresNouveauMembre["adresse"] = FILTER_SANITIZE_ENCODED;
-$filtresNouveauMembre["ville"] = FILTER_SANITIZE_ENCODED;
-$filtresNouveauMembre["pays"] = FILTER_SANITIZE_ENCODED;
-$filtresNouveauMembre["cellulaire"] = FILTER_SANITIZE_NUMBER_INT;
-$filtresNouveauMembre["avatar"] = FILTER_SANITIZE_ENCODED;
+$filtresNouveauMembre = array(
+    'pseudonyme' => FILTER_SANITIZE_ENCODED,
+    'mot_de_passe' => FILTER_SANITIZE_ENCODED,
+    'courriel' => FILTER_SANITIZE_EMAIL,
+    'adresse' => FILTER_SANITIZE_ENCODED,
+    'ville' => FILTER_SANITIZE_ENCODED,
+    'pays' => FILTER_SANITIZE_ENCODED,
+    'cellulaire' => FILTER_SANITIZE_NUMBER_INT
+);
+
 
 $nouveauMembre = filter_var_array($_SESSION, $filtresNouveauMembre);
 $nouveauMembre["avatar"] = $avatar;
+
 $reussiteInscription = MembreDAO::enregistrerMembre($nouveauMembre);
+
+//Effacement des données du tableau $_SESSION qui a été utilisé pour stocker les données d'inscription
+//session_destroy();
 
 ?>
 <section id="inscription">

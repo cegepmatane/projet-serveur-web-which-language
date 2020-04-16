@@ -16,6 +16,17 @@ class MembreDAO
         return $membre;
     }
 
+    public static function lireMembreParPseudonyme($pseudonyme)
+    {
+        $MESSAGE_SQL_LIRE_MEMBRE = "SELECT id, pseudonyme, courriel, adresse, ville, pays, cellulaire, avatar FROM membre WHERE pseudonyme=:pseudonyme;";
+
+        $requeteLireMembre = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_LIRE_MEMBRE);
+        $requeteLireMembre->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_STR);
+        $requeteLireMembre->execute();
+        $membre = $requeteLireMembre->fetch();
+        return $membre;
+    }
+
     public static function enregistrerMembre($nouveauMembre)
     {
         $MESSAGE_SQL_INSCRIPTION = "INSERT INTO membre (pseudonyme, mot_de_passe, courriel, adresse, ville, pays, cellulaire, avatar)

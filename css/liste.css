@@ -30,6 +30,33 @@ h2{
     color: green;
 }
 
+nav
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+    background-color: darkslategrey;
+    margin: 2%;
+}
+
+ul
+{
+    list-style: none;
+    text-align: left;
+}
+
+li
+{
+    margin: 10px auto;
+}
+
 
 .btn{
     text-decoration: none;
@@ -58,7 +85,7 @@ h2{
 #bouton-administration:hover{
     background-color: red;
 }
-
+a
 .bouton-action{
     margin: 0 auto;
     text-align: center;
@@ -120,6 +147,19 @@ input, label{
     flex-wrap: wrap;
 }
 
+
+#identifiants-membre, #coordonnees-membre
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#identifiants-membre :last-child, #coordonnees-membre :last-child
+{
+    text-align: right;
+}
+
 .item-box{
     margin-bottom: 100px;
     flex-basis: 30%;
@@ -154,6 +194,21 @@ input, label{
 .fluide{
     height: auto;
     width: 100%;
+}
+
+.conteneur-avatar
+{
+    margin: 2%;
+    width: auto;
+    height: auto;
+}
+
+.avatar
+{
+    width:  150px;
+    height: 150px;
+
+    border: black solid 2px;
 }
 
 footer{
