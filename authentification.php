@@ -1,4 +1,5 @@
 <section id="authentification">
+    <h2>Authentification</h2>
     <form action="membre.php" method="POST">
         <div id="">
             <label for="pseudonyme">Pseudonyme</label>

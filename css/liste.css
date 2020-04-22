@@ -19,41 +19,51 @@ header{
     background-position: center;
     height: 400px;
     margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 2em;
 }
 
 h2{
-    padding: 20px;
+    padding: 15px;
     color: green;
 }
 
-nav
+#bienvenue
 {
+    text-align: center;
+}
+
+nav{
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
 }
 
-a
-{
-    text-decoration: none;
+nav a {
     color: white;
-    background-color: darkslategrey;
-    margin: 2%;
 }
 
-ul
-{
+nav div{
+    background-color: darkslategray;
+    padding: 2%;
+}
+
+nav div:hover{
+    background-color: green;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
     list-style: none;
     text-align: left;
 }
 
-li
-{
+li{
     margin: 10px auto;
 }
 

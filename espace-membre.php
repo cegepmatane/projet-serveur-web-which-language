@@ -1,8 +1,8 @@
 <section id="espace-membre">
-    <h2>Bonjour <?= $membre['pseudonyme'] ?> !</h2>
     <div class="conteneur-avatar">
         <img class="avatar" src="img/avatars/<?= $membre['avatar'] ?>">
     </div>
+    <a href="traitement-deconnexion.php">Déconnexion</a>
     <div id="infos-membre" style="margin: auto; border: solid black 3px; width: 60%;">
         <h3>Identifiants</h3>
         <div id="identifiants-membre">
@@ -31,5 +31,4 @@
             </ul>
         </div>
     </div>
-    <a href="traitement-deconnexion.php">Déconnexion</a>
 </section>
