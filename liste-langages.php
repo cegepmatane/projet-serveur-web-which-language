@@ -30,17 +30,12 @@
 
                 ?>
             </div>
-            <footer>
-                &copy;Hy-Vong 2019
-            </footer>
-        </div>
-        <script>
-        function clicItem(idItem)
-        {
-            var url = "detail-langage.php?id="+ idItem;
-            console.log(url);
-            window.location = url;
-        }
-        </script>
-    </body>
-</html>
+            <script>
+            function clicItem(idItem)
+            {
+                var url = "detail-langage.php?id="+ idItem;
+                console.log(url);
+                window.location = url;
+            }
+            </script>
+<?php   include "pied-page.php"; ?>

@@ -36,9 +36,4 @@
                     <img src="../img/<?= $langage["illustration"] ?>" class="fluide"/>
                 </div>
             </div>
-            <footer>
-                &copy;Hy-Vong 2019
-            </footer>
-        </div>
-    </body>
-</html>
+<?php   include "../pied-page.php"; ?>

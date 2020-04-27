@@ -56,9 +56,4 @@
             <div class="bouton-action bouton-ajouter">
                 <a class="btn" href="ajouter-langage.php"><h2>+ Ajouter un langage</h2></a>
             </div>
-            <footer>
-                &copy;Hy-Vong 2019
-            </footer>
-        </div>
-    </body>
-</html>
+<?php   include "../pied-page.php"; ?>

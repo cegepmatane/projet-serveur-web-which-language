@@ -54,9 +54,4 @@
                     <input type="submit" value="Modifier">
                 </form>
             </section>
-            <footer>
-                &copy;Hy-Vong 2019
-            </footer>
-        </div>
-    </body>
-</html> 
+<?php   include "../pied-page.php"; ?>

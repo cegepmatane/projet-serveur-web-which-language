@@ -51,9 +51,4 @@ $reussiteModif = LangageDAO::modifierLangage($langage);
             }
 
             ?>
-            <footer>
-                &copy;Hy-Vong 2019
-            </footer>
-        </div>
-    </body>
-</html> 
+<?php   include "../pied-page.php"; ?>
