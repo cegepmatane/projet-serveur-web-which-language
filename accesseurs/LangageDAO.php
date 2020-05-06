@@ -23,7 +23,7 @@ class LangageDAO
         $set_utf=BaseDeDonnees::getConnexion()->prepare("SET NAMES UTF8"); 
         $set_utf->execute(); 
 
-        $REQUETE_LISTE_LANGAGES = "SELECT id, nom, auteur, date, description, utilisation from langage;";
+        $REQUETE_LISTE_LANGAGES = "SELECT id, nom, auteur, date, description, utilisation, illustration from langage;";
 
         $requeteListe = BaseDeDonnees::getConnexion()->prepare($REQUETE_LISTE_LANGAGES);
         $requeteListe->execute();

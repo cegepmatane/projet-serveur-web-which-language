@@ -20,6 +20,7 @@
                         <div class="item-img"></div>
                     <!-- </a> -->
                     <div class="item-text">
+                        <img class="item-mini" src="mini/mini-<?= $langage['illustration'] ?>" alt="mini-img-langage"/>
                         <h3 class="item-name"><?= $langage["nom"] ?></h3>
                         <p class="item-date"><?= $langage["date"] ?></p>
                         <p class="item-desc"><?= $langage["description"] ?></p>
