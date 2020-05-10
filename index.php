@@ -1,9 +1,9 @@
 <?php include ("entete.php"); ?>
     <div class="recherche-simple">
-        <form method="GET" action="traitement-recherche.php" >
+        <form method="GET" action="traitement-recherche-simple.php" >
             <label for="recherche">Recherche:</label>
             <input type="text" name="recherche" placeholder="titre, auteur, date, ...">
-            <input type="submit" name="action-rechercher" value="Valider">
+            <input type="submit" name="action-recherche-simple" value="Valider">
         </form>
         <p>ou faites une <a href="recherche-avancee.php">recherche avancée</a></p>
     </div>

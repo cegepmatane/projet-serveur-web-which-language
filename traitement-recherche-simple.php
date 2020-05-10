@@ -5,17 +5,18 @@ require CHEMIN_ACCESSEUR . "LangageDAO.php";
 include "entete.php";
 
 //Si on atterri sur la page à partir d'un formulaire de recherche
-if(isset($_GET['action-rechercher']) && !empty($_GET))
+if(isset($_GET['action-recherche-simple']))
 {
-    $recherche = $_GET['recherche'];
+    $recherche = $_GET["recherche"];
+
     $resultats = LangageDAO::rechercherSimple($recherche);
     //print_r($resultats);
-    if(empty($resultats))
-    {
-        ?>
-        <h2>Il n'y a aucun résultat pour la recherche : <?= $recherche ?></h2>
-        <?php
-    }
+
+    //Afficher le nombre de résultats
+    ?>
+    <h2>Il y a <?= count($resultats) ?> résultat(s) pour : <?= $recherche ?></h2>
+    <?php
+
 }
 ?>
 

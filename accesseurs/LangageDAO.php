@@ -50,6 +50,19 @@ class LangageDAO
         return $resultats;
     }
 
+    public static function rechercherAvancee($message)
+    {
+        $set_utf=BaseDeDonnees::getConnexion()->prepare("SET NAMES UTF8"); 
+        $set_utf->execute(); 
+
+        $requeteRecherche = BaseDeDonnees::getConnexion()->prepare($message);
+        $requeteRecherche->execute();
+        $resultats = $requeteRecherche->fetchAll();
+
+        return $resultats;
+    }
+
+
     public static function ajouterLangage($langage)
     {
         $MESSAGE_AJOUT_LANGAGE = "INSERT INTO langage (nom, auteur, date, description, utilisation, illustration)
