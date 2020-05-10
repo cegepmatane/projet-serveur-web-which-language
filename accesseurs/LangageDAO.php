@@ -32,6 +32,24 @@ class LangageDAO
         return $listeLangages;
     }
 
+    public static function rechercherSimple($recherche)
+    {
+        $set_utf=BaseDeDonnees::getConnexion()->prepare("SET NAMES UTF8"); 
+        $set_utf->execute(); 
+
+        $REQUETE_RECHERCHE_LANGAGES = "SELECT id, nom, auteur, date, description, utilisation, illustration from langage
+                                    WHERE id LIKE '%$recherche%' OR nom LIKE '%$recherche%' OR auteur LIKE '%$recherche%'
+                                    OR date LIKE '%$recherche%' OR description LIKE '%$recherche%' OR utilisation LIKE '%$recherche%'
+                                    OR illustration LIKE '%$recherche%';";
+
+        $requeteRecherche = BaseDeDonnees::getConnexion()->prepare($REQUETE_RECHERCHE_LANGAGES);
+        //$requeteRecherche->bindParam(':recherche', $recherche, PDO::PARAM_STR);
+        $requeteRecherche->execute();
+        $resultats = $requeteRecherche->fetchAll();
+
+        return $resultats;
+    }
+
     public static function ajouterLangage($langage)
     {
         $MESSAGE_AJOUT_LANGAGE = "INSERT INTO langage (nom, auteur, date, description, utilisation, illustration)

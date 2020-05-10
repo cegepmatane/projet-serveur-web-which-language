@@ -99,6 +99,10 @@ li{
     width: 30%;
 }
 
+#bouton-xlsx:hover{
+    background-color: blue;
+}
+
 #bouton-xlsx a{
     color: white;
 }
@@ -153,9 +157,27 @@ section{
 /*FORMULAIRES*/
 form{
     margin: 0 auto;
-    width: 40%;
+    width: 50%;
     border: solid black 3px;
     padding: 20px;
+}
+
+.recherche-simple{
+    margin: auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.recherche-simple a{
+    background-color: darkmagenta;
+    padding: 2px;
+    color: white;
+}
+
+.recherche-simple a:hover{
+    background-color: magenta;
 }
 
 input, label{
