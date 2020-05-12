@@ -1,4 +1,6 @@
 <?php
+	header('Content-type: application/xml');
+	
     require "configuration.php";
     require CHEMIN_ACCESSEUR . "LangageDAO.php";
     $listeLangages = LangageDAO::listerLangages();
