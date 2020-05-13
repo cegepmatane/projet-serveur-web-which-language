@@ -9,7 +9,7 @@
 
     foreach($listeLangages as $langage)
     {
-        $tableur->addRow(array($langage['nom'], $langage['auteur'], $langage['date']));
+        $tableur->addRow(array($langage['nom'], $langage['auteur'], $langage['date'], $langage['description'], $langage['utilisation'], $langage['illustration']));
     }
 
     //$tableur->addRow(array('Avatar', '300 minutes'));
