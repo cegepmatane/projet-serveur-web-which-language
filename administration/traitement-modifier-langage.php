@@ -13,11 +13,11 @@ require CHEMIN_ACCESSEUR . 'LangageDAO.php';
 
 $filtresModifLangage = array();
 $filtresModifLangage['id'] = FILTER_SANITIZE_NUMBER_INT;
-$filtresModifLangage['nom'] = FILTER_SANITIZE_ENCODED;
-$filtresModifLangage['auteur'] = FILTER_SANITIZE_ENCODED;
+$filtresModifLangage['nom'] = FILTER_SANITIZE_STRING;
+$filtresModifLangage['auteur'] = FILTER_SANITIZE_STRING;
 $filtresModifLangage['date'] = FILTER_SANITIZE_NUMBER_INT;
-$filtresModifLangage['description'] = FILTER_SANITIZE_ENCODED;
-$filtresModifLangage['utilisation'] = FILTER_SANITIZE_ENCODED;
+$filtresModifLangage['description'] = FILTER_SANITIZE_STRING;
+$filtresModifLangage['utilisation'] = FILTER_SANITIZE_STRING;
 
 $langage = filter_input_array(INPUT_POST, $filtresModifLangage);
 $langage['illustration'] = $illustration;

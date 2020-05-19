@@ -12,11 +12,11 @@ require "../configuration.php";
 require CHEMIN_ACCESSEUR . "LangageDAO.php";
 
 $filtresAjoutLangage = array();
-$filtresAjoutLangage["nom"] = FILTER_SANITIZE_ENCODED;
-$filtresAjoutLangage["auteur"] = FILTER_SANITIZE_ENCODED;
+$filtresAjoutLangage["nom"] = FILTER_SANITIZE_STRING;
+$filtresAjoutLangage["auteur"] = FILTER_SANITIZE_STRING;
 $filtresAjoutLangage["date"] = FILTER_SANITIZE_NUMBER_INT;
-$filtresAjoutLangage["description"] = FILTER_SANITIZE_ENCODED;
-$filtresAjoutLangage["utilisation"] = FILTER_SANITIZE_ENCODED;
+$filtresAjoutLangage["description"] = FILTER_SANITIZE_STRING;
+$filtresAjoutLangage["utilisation"] = FILTER_SANITIZE_STRING;
 
 $langage = filter_input_array(INPUT_POST, $filtresAjoutLangage);
 $langage["illustration"] = $illustration;
