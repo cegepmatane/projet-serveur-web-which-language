@@ -76,6 +76,12 @@ li{
     color: white;
 }
 
+.div-btn{
+    margin: 0 auto;
+    text-align: center;
+    width: 30%;
+}
+
 #bouton-retour{
     width: 30%;
     background-color: green;
@@ -86,21 +92,19 @@ li{
 }
 
 #bouton-administration{
-    margin: 0 auto;
-    text-align: center;
-    width: 30%;
     background-color: darkred;
 }
 
 #bouton-xlsx{
     background-color: darkblue;
-    margin: 0 auto;
-    text-align: center;
-    width: 30%;
 }
 
-#bouton-xlsx:hover{
-    background-color: blue;
+.bouton-stats{
+    background-color: black;
+}
+
+.bouton-stats:hover{
+    background-color: grey;
 }
 
 #bouton-xlsx a{
@@ -110,7 +114,11 @@ li{
 #bouton-administration:hover{
     background-color: red;
 }
-a
+
+#bouton-xlsx:hover{
+    background-color: blue;
+}
+
 .bouton-action{
     margin: 0 auto;
     text-align: center;
@@ -252,6 +260,12 @@ input, label{
     height: 150px;
 
     border: black solid 2px;
+}
+
+td, th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
 
 footer{

@@ -109,6 +109,17 @@ class LangageDAO
 
         return $requeteSuppr;
     }
+
+    public static function listerCategories()
+    {
+        $MESSAGE_LISTER_CATEGORIES = "SELECT categorie, COUNT(nom) as nombre_langages, SUM(utilisateurs) as nombre_utilisateurs, MIN(date) as plus_ancien, MAX(date) as plus_recent FROM langage GROUP BY categorie ORDER BY nombre_utilisateurs DESC";
+
+        $requeteCategories = BaseDeDonnees::getConnexion()->prepare($MESSAGE_LISTER_CATEGORIES);
+        $requeteCategories->execute();
+        $categories = $requeteCategories->fetchAll();
+
+        return $categories;
+    }
 }
 
 ?>

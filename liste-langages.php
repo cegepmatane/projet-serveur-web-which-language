@@ -5,10 +5,10 @@
 
     include "entete.php";
 ?>
-            <div id="bouton-administration">
+            <div class="div-btn" id="bouton-administration">
                 <a class="btn" href="administration/liste-langages.php"><h2>Section ADMIN</h2></a>
             </div>
-            <div id="bouton-xlsx">
+            <div class="div-btn" id="bouton-xlsx">
                 <a class="btn" href="export-tableur.php"><h2>Exporter la liste au format .XLSX</h2></a>
             </div>
             <h2>Liste des langages</h2>

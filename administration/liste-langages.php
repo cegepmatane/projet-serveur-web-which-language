@@ -26,6 +26,14 @@
             <div id="bouton-retour">
                 <a class="btn" href="../liste-langages.php"><h2> < Quitter section ADMIN</h2></a>
             </div>
+            <!--BOUTONS STATISTIQUES-->
+            <div class="div-btn bouton-stats">
+                <a class="btn" href="contenu-stats.php"><h2>Statistiques de CONTENU</h2></a>
+            </div>
+            <div class="div-btn bouton-stats">
+                <a class="btn" href="visites-stats.php"><h2>Statistiques de VISITES</h2></a>
+            </div>
+            <!--LISTE LANGAGES-->
             <h2>Liste des langages</h2>
             <div id="liste-item">
                 <?php
