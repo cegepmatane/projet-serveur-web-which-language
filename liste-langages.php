@@ -3,6 +3,9 @@
     require CHEMIN_ACCESSEUR . "LangageDAO.php";
     $listeLangages = LangageDAO::listerLangages();
 
+    require CHEMIN_ACCESSEUR . "ClicDAO.php";
+    ClicDAO::enregistrerVisite($_SERVER);
+
     include "entete.php";
 ?>
             <div class="div-btn" id="bouton-administration">

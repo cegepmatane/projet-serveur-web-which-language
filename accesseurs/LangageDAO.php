@@ -1,5 +1,5 @@
 <?php
-require CHEMIN_ACCESSEUR ."BaseDeDonnees.php";
+require_once CHEMIN_ACCESSEUR ."BaseDeDonnees.php";
 
 class LangageDAO
 {

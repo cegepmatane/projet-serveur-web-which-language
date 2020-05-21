@@ -8,7 +8,7 @@ class BaseDeDonnees
         ini_set('display_errors', 1);
     
         $usager = 'root';
-        $motdepasse = 'linuxRoot';
+        $motdepasse = 'root';
         $hote = 'localhost';
         $base = 'informatique';
     

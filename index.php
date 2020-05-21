@@ -1,4 +1,11 @@
-<?php include ("entete.php"); ?>
+<?php
+include ("entete.php");
+
+include "configuration.php";
+require CHEMIN_ACCESSEUR . "ClicDAO.php";
+ClicDAO::enregistrerVisite($_SERVER);
+
+?>
     <div class="recherche-simple">
         <form method="GET" action="traitement-recherche-simple.php" >
             <label for="recherche">Recherche:</label>

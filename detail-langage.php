@@ -1,8 +1,12 @@
 <?php
-    require_once ("configuration.php");
+    require "configuration.php";
     require CHEMIN_ACCESSEUR . "LangageDAO.php";
+    require CHEMIN_ACCESSEUR . "ClicDAO.php";
+
     $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $langage = LangageDAO::lireLangage($id);
+
+    ClicDAO::enregistrerVisite($_SERVER);
 ?>
 
 <html lang="fr" xml:lang="fr">
