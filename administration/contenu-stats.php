@@ -10,6 +10,7 @@ $listeCategories = LangageDAO::listerCategories();
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <title>Liste des langages de programmation</title>
         <link rel="stylesheet" type="text/css" href="../css/liste.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     </head>
     <body>
         <div id="contenu-page">
@@ -44,5 +45,39 @@ $listeCategories = LangageDAO::listerCategories();
                     ?>
                 </table>
             </div>
+            <div class="chart-container" style="height:80vh; width:80vw; margin: 50px auto;">
+                <canvas id="graphique" ></canvas>
+            </div>
+            <script>
+                <?php
+                    foreach($listeCategories as $categorie)
+                    {
+                        $categories[] = "\"".$categorie['categorie']."\"";
+                        $nombreParCategorie[] = $categorie['nombre_langages'];
+                    }      
+                ?>
+
+                var donnees = [<?php echo implode(',' , $nombreParCategorie); ?>];
+                var etiquettes = [<?php echo implode(',' , $categories); ?>];
+                var couleurs = ['darkslateblue', 'red', 'blue', 'orange'];
+
+                var cible = document.getElementById('graphique');
+                var graphiqueTarte = new Chart(cible, {
+                    type: 'pie',
+                    data: {
+                        labels: etiquettes,
+                        datasets: 
+                        [
+                            {
+                                label: 'Contenu par catégorie',
+                                data: donnees,
+                                backgroundColor: couleurs
+                            }
+                        ]
+                    },
+                    options: { responsive: true }
+                });
+
+            </script>
 <?php include "../pied-page.php"; ?>
         

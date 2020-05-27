@@ -13,6 +13,7 @@ $listeParLangue = ClicDAO::listerStatsParLangue();
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <title>Liste des langages de programmation</title>
         <link rel="stylesheet" type="text/css" href="../css/liste.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     </head>
     <body>
         <div id="contenu-page">
@@ -71,4 +72,40 @@ $listeParLangue = ClicDAO::listerStatsParLangue();
                     ?>
                 </table>
             </div>
+            <!-- GRAPHIQUE STATS JOUR-->
+            <div class="chart-container" style="height:80vh; width:80vw; margin: 50px auto;">
+                <canvas id="graphique-jour" ></canvas>
+            </div>
+            <script>
+                <?php
+                    foreach($listeParJour as $jourEnregistre)
+                    {
+                        $jour[] = "\"".$joursDeLaSemaine[$jourEnregistre['jour'] - 1]."\"";
+                        $nombreVisitesParJour[] = $jourEnregistre['visites'];
+                    }
+                ?>
+
+                var visitesParJour = [<?php echo implode(',' , $nombreVisitesParJour); ?>];
+                var moyenneVisitesParJour = visitesParJour.reduce((a,b) => a + b, 0);
+                console.log(moyenneVisitesParJour);
+
+                var cibleStatsJours = document.getElementById('graphique-jour').getContext('2d');
+                var graphiqueLigneJours = new Chart(cibleStatsJours, {
+                    type: 'line',
+                    data: {
+                        labels: [<?php echo implode(',' , $jour); ?>],
+                        datasets: 
+                        [
+                            {
+                                label: 'Visites par jour',
+                                data: visitesParJour,
+                                backgroundColor: 'pink',
+                                borderColor: 'darkslateblue'
+                            }
+                        ]
+                    },
+                    options: { responsive: true }
+                });
+
+            </script>
 <?php include "../pied-page.php"; ?>
