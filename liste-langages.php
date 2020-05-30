@@ -9,7 +9,7 @@
     include "entete.php";
 ?>
             <div class="div-btn" id="bouton-administration">
-                <a class="btn" href="administration/liste-langages.php"><h2>Section ADMIN</h2></a>
+                <a class="btn" href="administration/index.php"><h2>Section ADMIN</h2></a>
             </div>
             <div class="div-btn" id="bouton-xlsx">
                 <a class="btn" href="export-tableur.php"><h2>Exporter la liste au format .XLSX</h2></a>

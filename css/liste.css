@@ -247,6 +247,11 @@ input, label{
     width: 100%;
 }
 
+.img-fluide{
+    height: 270px;
+    width: 90%;
+}
+
 .conteneur-avatar
 {
     margin: 2%;
@@ -266,6 +271,48 @@ td, th{
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+}
+
+#dashboard{
+    width: 95%;
+    height: auto;
+
+    margin: 1% auto;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.vignette{
+    flex-basis: 30%;
+    height: 400px;
+    margin: 10px auto;
+    box-shadow: lightgrey 5px 5px;
+    border-radius: 1%;
+
+    padding: 20px;
+    text-align: left;
+    font-size: 1.5em;
+
+
+    color: whitesmoke;
+}
+
+.vignette a{
+    color: whitesmoke;
+}
+
+
+.vignette:hover{
+    border: 2px solid black;
+    box-shadow: grey 5px 5px;
+}
+
+#pensee-du-jour{
+    font-size: 2em;
+    font-style: italic;
+    color: paleturquoise;
 }
 
 footer{
