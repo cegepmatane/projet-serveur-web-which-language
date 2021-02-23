@@ -7,19 +7,15 @@
     <body>
         <div id="contenu-page">
             <header>
-                <a href="index.php"><h1>Which Language : Quel langage choisir ?</h1></a>
                 <nav>
+                <?php  if(isset($_SESSION['pseudonyme'])) { ?>
+                        <div><a href="membre.php">Espace membre</a></div>
+                <?php } else { ?>
+                        <div><a href="inscription-1.php">S'inscrire</a></div>
+                        <div><a href="membre.php">Se connecter</a></div>
+                <?php } ?>
                     <div><a href="liste-langages.php">Liste des langages</a></div>
-                    <div><a href="membre.php">Membre</a></div>
                 </nav>
+                <a href="index.php"><h1>Which Language</h1></a>
+                <h3>Quel langage choisir ?</h2>
             </header>
-            <div id="bienvenue">
-                <h2>Bonjour
-                <?php
-                    if(isset($_SESSION['pseudonyme']))
-                    {
-                        echo $_SESSION['pseudonyme'];
-                    }
-                ?>
-                ! </h2>
-            </div>

@@ -27,7 +27,7 @@ if(isset($_POST["valider-identifiants"]))
         </div>
         <div>
             <label for="cellulaire">*Téléphone cellulaire: </label>
-            <input type="text" name="cellulaire" placeholder="ex: 4184297894" required/>
+            <input type="text" name="cellulaire" placeholder="ex: (XXX) XXX-XXXX" required/>
         </div>
         <input type="submit" name="valider-coordonnees" value="Suivant"/>
         <p style="font-style: italic; font-size: 9pt;">Les champs précédés d'une astérisque (*) sont obligatoires</p>

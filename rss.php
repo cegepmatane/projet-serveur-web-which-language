@@ -1,9 +1,8 @@
-<?php
-	header('Content-type: application/xml');
-	
-    require "configuration.php";
-    require CHEMIN_ACCESSEUR . "LangageDAO.php";
-    $listeLangages = LangageDAO::listerLangages();
+<?phprequire "configuration.php";
+require CHEMIN_ACCESSEUR . "LangageDAO.php";
+$listeLangages = LangageDAO::listerLangages();
+
+header('Content-type: application/xml');
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
@@ -17,8 +16,8 @@
 
 	<channel>
 		<title>Which Language : Quel langage choisir ?</title>
-		<atom:link href="http://localhost/projet-serveur-web-2020-Emustle/rss.php" rel="self" type="application/rss+xml" />
-		<link>http://localhost/projet-serveur-web-2020-Emustle/</link>
+		<atom:link href="http://localhost/which-language/rss.php" rel="self" type="application/rss+xml" />
+		<link>http://localhost/which-language/</link>
 		<description>Le site pour vous aider à choisir le langage de programmation qui vous convient</description>
 		<language>fr-CA</language>
 		<?php
@@ -27,7 +26,7 @@
 		?>
 		<item>
 			<title><?=$langage['nom']?></title>
-			<link>http://localhost/projet-serveur-web-2020-Emustle/detail-langage.php?id=<?=$langage['id']?></link>
+			<link>http://localhost/which-language/detail-langage.php?id=<?=$langage['id']?></link>
 			<pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
 			<category><![CDATA[Langage]]></category>
 			<description><![CDATA[<?=$langage['description']?>]]></description>
