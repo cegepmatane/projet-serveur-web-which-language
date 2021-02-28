@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Ajout d'un langage</title>
-        <link rel="stylesheet" type="text/css" href="../css/liste.css">
-    </head>
+<?php
+    include "../configuration.php";
+    include "../entete.php";
+?>
     <body>
         <div id="contenu-page">
-            <header>
-                <h1>Ajout d'un langage</h1>
-
-            </header>
             <div id="bouton-retour">
                 <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
             </div>
@@ -35,6 +28,14 @@
                     <div class="champ">
                         <label for="utilisation">Utilisation</label>
                         <textarea type="text" id="utilisation" name="utilisation" required></textarea>
+                    </div>
+                    <div class="champ">
+                        <label for="categorie">Catégorie</label>
+                        <input type="text" id="categorie" name="categorie" required>
+                    </div>
+                    <div class="champ">
+                        <label for="utilisateurs">Utilisateurs</label>
+                        <input type="number" id="utilisateurs" name="utilisateurs" required>
                     </div>
                     <div class="champ">
                         <label for="illustration">Illustration</label>

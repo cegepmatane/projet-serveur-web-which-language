@@ -4,20 +4,11 @@
 
     $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $langage = LangageDAO::lireLangage($id);
-?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Suppression d'un langage</title>
-        <link rel="stylesheet" type="text/css" href="../css/liste.css">
-    </head>
-    <body>
+    include "../entete.php";
+
+?>
         <div id="contenu-page">
-            <header>
-                <h1>Suppression du langage <?=$langage["nom"]?></h1>
-            </header>
             <div id="bouton-retour">
                 <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
             </div>

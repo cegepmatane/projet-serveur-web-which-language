@@ -4,20 +4,13 @@
 
     $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $langage = LangageDAO::lireLangage($id);
+
+    include "../entete.php";
 ?>
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Modification d'un langage</title>
-        <link rel="stylesheet" type="text/css" href="../css/liste.css">
-    </head>
-    <body>
         <div id="contenu-page">
-            <header>
-                <h1>Modification du langage <?=$langage["nom"]?></h1>
-            </header>
             <div id="bouton-retour">
                 <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
             </div>

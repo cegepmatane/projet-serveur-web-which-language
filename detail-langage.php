@@ -7,6 +7,8 @@
     $langage = LangageDAO::lireLangage($id);
 
     ClicDAO::enregistrerVisite($_SERVER);
+
+    include "entete.php";
 ?>
 
 <html lang="fr" xml:lang="fr">
@@ -17,9 +19,6 @@
     </head>
     <body>
         <div id="contenu-page">
-            <header>
-                <h1>Détail du langage <?= $langage["nom"] ?></h1>
-            </header>
             <div id="bouton-retour">
                 <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
             </div>

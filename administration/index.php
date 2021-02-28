@@ -1,14 +1,8 @@
-<html lang="fr" xml:lang="fr">
-    <head>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-        <title>Dashboard</title>
-        <link rel="stylesheet" type="text/css" href="../css/liste.css">
-    </head>
-    <body>
+<?php
+    include "../entete.php";
+
+?>
         <div id="contenu-page">
-            <header>
-                <h1>Dashboard Admin</h1>
-            </header>
             <div id="bouton-retour">
                 <a class="btn" href="../liste-langages.php"><h2> < Quitter section ADMIN</h2></a>
             </div>

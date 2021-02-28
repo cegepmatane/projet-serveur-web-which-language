@@ -3,7 +3,7 @@
                     &copy;<span> Hy-Vong Georges dit Rap 2021 </span>
                 </div>
                 <a href="rss.php">
-                    <img src="img/rss.png" alt="Logo fil RSS" width="50" height="50"/>
+                    <img src="<?php $_SERVER['DOCUMENT_ROOT'] ?>/which-language/img/rss.png" alt="Logo fil RSS" width="50" height="50"/>
                 </a>
             </footer>
         </div>

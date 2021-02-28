@@ -9,6 +9,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100%;
 }
 
 header{
@@ -39,6 +40,11 @@ header h3{
     color: rgb(226, 226, 226);
 }
 
+header p{
+    color: rgb(226, 226, 226);
+    font-size: 0.8em;
+}
+
 h2{
     padding: 15px;
     color: black;
@@ -64,7 +70,29 @@ nav div{
 }
 
 nav a:hover{
-    color: white;
+    color: #ff6d24;
+}
+
+#langages-accueil{
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    perspective: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+#langages-accueil > div{
+    flex-basis: 20%;
+    border: 1px black solid;
+    border-radius: 100px;
+}
+
+#langages-accueil img{
+    width: 150px;
+    height: auto;
+    -webkit-transform: rotate3d(0, 1, 0, 15deg);
+    transform: rotate3d(0, 1, 0, 15deg);
 }
 
 a{
@@ -100,11 +128,11 @@ li{
 
 #bouton-retour{
     width: 30%;
-    background-color: green;
+    background-color: #383e65;
 }
 
 #bouton-retour:hover{
-    background-color: #383e65;
+    background-color: #ff6e27;
 }
 
 #bouton-administration{
@@ -199,6 +227,7 @@ form{
 .recherche-simple a{
     padding: 2px;
     color:white;
+    text-decoration:underline;
 }
 
 .recherche-simple a:hover{
@@ -217,6 +246,13 @@ form{
     width: 10%;
     height: 50px;
     border-radius: 30px;
+    background-color: #ff6d24;
+    color: white;
+}
+
+.recherche-simple input[type=submit]:hover{
+    background-color: #d65412;
+    cursor: pointer;
 }
 
 .recherche-simple label{
@@ -230,14 +266,16 @@ form{
 }
 
 
-#identifiants-membre, #coordonnees-membre
+#identifiants-membre, 
+#coordonnees-membre
 {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-#identifiants-membre :last-child, #coordonnees-membre :last-child
+#identifiants-membre :last-child, 
+#coordonnees-membre :last-child
 {
     text-align: right;
 }
@@ -261,11 +299,11 @@ form{
 
 .item-img{
     height: 80px;
-    background-color: #3c4899;
+    background-color: rgba(17,12,91,1);
 }
 
 .item-img:hover{
-    background-color: green;
+    background-color: #ff6d24;
 }
 
 

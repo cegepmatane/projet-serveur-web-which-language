@@ -1,6 +1,6 @@
 <?php
 
-$repertoireIllustration = $_SERVER['DOCUMENT_ROOT'] . "/projet-serveur-web-2020-Emustle/img/";
+$repertoireIllustration = $_SERVER['DOCUMENT_ROOT'] . "/which-language/img/";
 $illustration = $_FILES['illustration']['name'];
 
 $fichierDestination = $repertoireIllustration . $illustration;
@@ -24,20 +24,9 @@ $langage['illustration'] = $illustration;
 
 $reussiteModif = LangageDAO::modifierLangage($langage);
 
+include "../entete.php";
 ?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Modification d'un langage</title>
-        <link rel="stylesheet" type="text/css" href="../css/liste.css">
-    </head>
-    <body>
         <div id="contenu-page">
-            <header>
-                <h1>Modification du langage <?=$langage['nom']?></h1>
-            </header>
             <div id="bouton-retour">
                 <a class="btn" href="liste-langages.php"><h2> < Liste des langages</h2></a>
             </div>

@@ -65,8 +65,8 @@ class LangageDAO
 
     public static function ajouterLangage($langage)
     {
-        $MESSAGE_AJOUT_LANGAGE = "INSERT INTO langage (nom, auteur, date, description, utilisation, illustration)
-                            VALUES (:nom, :auteur, :date, :description, :utilisation, :illustration);";
+        $MESSAGE_AJOUT_LANGAGE = "INSERT INTO langage (nom, auteur, date, description, utilisation, illustration, categorie, utilisateurs)
+                            VALUES (:nom, :auteur, :date, :description, :utilisation, :illustration, :categorie, :utilisateurs);";
 
         $requeteAjout = BaseDeDonnees::getConnexion()->prepare($MESSAGE_AJOUT_LANGAGE);
         $requeteAjout->bindParam(':nom', $langage['nom'], PDO::PARAM_STR);
@@ -75,6 +75,8 @@ class LangageDAO
         $requeteAjout->bindParam(':description', $langage['description'], PDO::PARAM_STR);
         $requeteAjout->bindParam(':utilisation', $langage['utilisation'], PDO::PARAM_STR);
         $requeteAjout->bindParam(':illustration', $langage['illustration'], PDO::PARAM_STR);
+        $requeteAjout->bindParam(':categorie', $langage['categorie'], PDO::PARAM_STR);
+        $requeteAjout->bindParam(':utilisateurs', $langage['utilisateurs'], PDO::PARAM_STR);
         $requeteAjout->execute();
 
         return $requeteAjout;
