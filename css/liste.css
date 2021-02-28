@@ -77,22 +77,51 @@ nav a:hover{
     position: absolute;
     bottom: 30px;
     width: 100%;
-    perspective: 500px;
+
     display: flex;
     justify-content: center;
 }
 
 #langages-accueil > div{
+    perspective: 300px;
+    perspective-origin: center;
     flex-basis: 20%;
+    width: 20%;
+    margin: 0 1%;
+    /*
     border: 1px black solid;
     border-radius: 100px;
+    */
 }
 
 #langages-accueil img{
-    width: 150px;
+    width: 50%;
     height: auto;
+    animation-name: animation-langages;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
     -webkit-transform: rotate3d(0, 1, 0, 15deg);
     transform: rotate3d(0, 1, 0, 15deg);
+    /*
+    border: solid black 5px;
+    border-radius: 100px;
+    */
+}
+
+@keyframes animation-langages{
+    0% {
+        -webkit-transform: rotate3d(0, 1, 0, 15deg);
+        transform: rotate3d(0, 1, 0, 15deg);
+    }
+    50%{
+        -webkit-transform: rotate3d(0, 1, 0, 35deg);
+        transform: rotate3d(0, 1, 0, 35deg);
+    }
+
+    100% {
+        -webkit-transform: rotate3d(0, 1, 0, 15deg);
+        transform: rotate3d(0, 1, 0, 15deg);
+    }
 }
 
 a{

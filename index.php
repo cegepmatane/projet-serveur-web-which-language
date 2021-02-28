@@ -19,9 +19,11 @@ include "entete.php";
                     <p>ou faites une <a href="recherche-avancee.php">recherche avancée</a></p>
                 </div>
                 <div id="langages-accueil">
+                    <div><img src="img/java.png"></div>
                     <div><img src="img/js.png"></div>
-                    <div><img src="img/js.png"></div>
-                    <div><img src="img/js.png"></div>
+                    <div><img src="img/c++.png"></div>
+                    <div><img src="img/csharp.png"></div>
+                    <div><img src="img/ruby.png"></div>
                 </div>
             </script>
             <script defer>
